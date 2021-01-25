@@ -1,4 +1,4 @@
-public class DogArray
+public class ArrayReview
 {
 
     /**
@@ -10,7 +10,12 @@ public class DogArray
      */
     public static String getNames(Employee[] employees)
     {
-        return "";
+      String answer = "";
+      for(int i = 0; i < employees.length; i++) {
+        if(employees[i].getYears() > 20)
+          answer += employees[i].getName() + " ";
+      }
+      return answer;
     }
 
     /**
@@ -21,6 +26,17 @@ public class DogArray
      */
     public static double average(double[] nums)
     {
-        return 0.0;
+      double all = 0.0;
+      double average = 0.0;
+      double counter = 0.0;
+      for (double v : nums) {
+        if (v >= 0) {
+          all += v;
+          counter += 1.0;
+        }
+      }
+      if (counter > 0)
+        average = all/counter;
+      return average;
     }
 }
